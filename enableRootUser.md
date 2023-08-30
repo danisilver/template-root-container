@@ -42,7 +42,7 @@ Once the container has been pushed, we can use it in a new devfile in a github r
 
 The base container is `docker.io/danisilver/mariodga:latest`
 
-```json
+```yaml
 schemaVersion: 2.2.0
 metadata:
   name: nodejs-mongodb
