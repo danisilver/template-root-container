@@ -12,6 +12,8 @@ CMD tail -f /dev/null
 ```
 https://developers.redhat.com/blog/2018/08/15/how-to-enable-sudo-on-rhel
 
+https://stackoverflow.com/questions/66190675/docker-set-user-password-non-interactively
+
 then create the `authfile.json` with your credentialsrun the commands
 
 ``` json
@@ -123,3 +125,8 @@ commands:
       group:
         kind: run
 ```
+
+## Nuances:
+npm as root installs global packages in the directory:
+`/usr/local/share/npm/bin` update the PATH
+`export PATH=$PATH:/usr/local/share/npm/bin`
