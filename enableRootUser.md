@@ -2,7 +2,7 @@
 
 Create the `Dockerfile` with the content
 
-```
+```Docker
 FROM devspaces/udi-rhel8:latest
 RUN dnf -y -q install sudo
 RUN RUN echo "user:password" | chpasswd
@@ -13,13 +13,26 @@ CMD tail -f /dev/null
 
 then create the `authfile.json` with your credentialsrun the commands
 
+``` json
+{
+	"auths": {
+		"docker.io": {
+			"auth": "…" // base64 encoded string
+		},
+		"registry.redhat.io": {
+			"auth": "…" // base64 encoded string
+		}
+	}
+}
 ```
+
+```bash
 docker build --authfile authfile.json -t mariodga:latest
 ```
 ...build output
 
 
-```
+```bash
 docker push --authfile authfile.json mariodga:latest docker.io/danisilver/mariodga:latest
 ```
 
@@ -29,7 +42,7 @@ Once the container has been pushed, we can use it in a new devfile in a github r
 
 The base container is `docker.io/danisilver/mariodga:latest`
 
-```
+```json
 schemaVersion: 2.2.0
 metadata:
   name: nodejs-mongodb
