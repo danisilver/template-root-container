@@ -10,6 +10,7 @@ RUN echo 'user ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
 WORKDIR /projects
 CMD tail -f /dev/null
 ```
+https://developers.redhat.com/blog/2018/08/15/how-to-enable-sudo-on-rhel
 
 then create the `authfile.json` with your credentialsrun the commands
 
