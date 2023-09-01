@@ -5,7 +5,7 @@ Create the `Dockerfile` with the content
 ```Docker
 FROM devspaces/udi-rhel8:latest
 RUN dnf -y -q install sudo
-RUN RUN echo "user:password" | chpasswd
+RUN echo "user:password" | chpasswd
 RUN echo 'user ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
 WORKDIR /projects
 CMD tail -f /dev/null
