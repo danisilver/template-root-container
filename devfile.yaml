@@ -24,7 +24,7 @@ projects:
 components:
   - name: nodejs
     container:
-      image: docker.io/danisilver/mariodga:latest
+      image: docker.io/danisilver/mariodga:v2
       env:
       # The values below are used to set up the environment for running the application
         - name: SECRET
