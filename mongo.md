@@ -30,6 +30,8 @@ import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
 https://stackoverflow.com/questions/23943651/mongodb-admin-user-not-authorized
 ```
 
+sh-4.2$ mongo -u admin -p password --authenticationDatabase admin
+
 use admin
 db.createUser(
   {
@@ -79,6 +81,17 @@ meal-tracker-fsa  0.000GB
 
 //
 
+curl https://gist.githubusercontent.com/danisilver/515bf52751c1426ae24e933864be181a/raw/c76f84a05219b23cf853d79601e541bd08f6d829/test --output recipes.json
+
 mongoimport -u user -p password --authenticationDatabase admin --db="meal-tracker" --collection="recipes" --file=recipes.json --jsonArray
+
+> db.recipes.createIndex({name: "text"})
+{
+        "createdCollectionAutomatically" : false,
+        "numIndexesBefore" : 1,
+        "numIndexesAfter" : 2,
+        "ok" : 1
+}
+> 
 ```
 
