@@ -14,7 +14,17 @@ https://developers.redhat.com/blog/2018/08/15/how-to-enable-sudo-on-rhel
 
 https://stackoverflow.com/questions/66190675/docker-set-user-password-non-interactively
 
-then create the `authfile.json` with your credentialsrun the commands
+
+then create the `authfile.json` with your credentials with encoded text for user and password:
+```bash
+echo "user:password" | base64 
+```
+
+```powershell
+powershell "[convert]::ToBase64String([Text.Encoding]::UTF8.GetBytes(\"user:password\"))"
+```
+
+for each credential put the output in the content of each "auth" in the following json
 
 ``` json
 {
