@@ -1,6 +1,6 @@
 schemaVersion: 2.2.0
 metadata:
-  name: nodejs-mongodb
+  name: DevWorkspace
   namespace: danielgallardo21-dev
 attributes:
   controller.devfile.io/devworkspace-config:
