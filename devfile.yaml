@@ -24,7 +24,7 @@ projects:
 components:
   - name: nodejs
     container:
-      image: docker.io/danisilver/mariodga:v2
+      image: docker.io/sharelatex/sharelatex:latest
       env:
       # The values below are used to set up the environment for running the application
         - name: SECRET
